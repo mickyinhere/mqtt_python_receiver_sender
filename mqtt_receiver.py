@@ -38,6 +38,7 @@ def connect_mqtt() -> mqtt_client:
 
 def subscribe(client: mqtt_client):
     print("subscribe(client: mqtt_client):")
+
     def on_message(client, userdata, msg):
         #print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
         print(len(msg.payload.decode()))
@@ -45,11 +46,17 @@ def subscribe(client: mqtt_client):
     client.subscribe(topic)
     client.on_message = on_message
 
-
+import time
 def run():
-    client = connect_mqtt()
-    subscribe(client)
-    client.loop_forever()
+    while True:
+     time.sleep(0.5)
+     client = connect_mqtt()
+    #subscribe(client)
+    #client.loop_forever()
+    #print("broken")
+     client.loop_start()
+     subscribe(client)
+
 
 
 if __name__ == '__main__':

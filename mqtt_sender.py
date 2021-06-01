@@ -35,17 +35,20 @@ def connect_mqtt():
 
 
 def publish(client):
+    counter = 0
     msg_count = 0
     while True:
-        time.sleep(0.01)
+        time.sleep(0.11)
+        counter = counter + 1
         msg = f"messages: {msg_count}"
         msg = "77"
         msg = "778888888888888888888888888888asdfasdfjhkasldfjkasdfkljsakgklsajlfsakflksajkfkasjhflkshajkfhksajhflkjsajkfhkjlsajfksahkfhaksjhfksahdlfkjhaslkfdjhlkjashfdkjahskjfjhakshflkjsahkjdfhkashfdl"
         msg =msg+msg+msg
         msg = msg + msg + msg
         msg = msg + msg + msg
-        #msg = msg + msg + msg
-        #msg = msg + msg + msg
+        msg = msg + str("a" * counter)
+        msg = msg + msg + msg
+        msg = msg + msg + msg
         #msg = msg + msg + msg
         #msg = msg + msg + msg
         #msg = msg + msg + msg
