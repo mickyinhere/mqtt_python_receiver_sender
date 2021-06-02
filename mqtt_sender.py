@@ -38,7 +38,7 @@ def publish(client):
     counter = 0
     msg_count = 0
     while True:
-        time.sleep(0.11)
+        time.sleep(0.01)
         counter = counter + 1
         msg = f"messages: {msg_count}"
         msg = "77"
